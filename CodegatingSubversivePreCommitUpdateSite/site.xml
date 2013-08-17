@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.codegating.svn.precommithook_1.0.0.qualifier.jar" id="org.codegating.svn.precommithook" version="1.0.0.qualifier">
+      <category name="SubversivePreCommitHook"/>
+   </feature>
+   <category-def name="SubversivePreCommitHook" label="Subversive Pre Commit Hook">
+      <description>
+         Subversive Pre Commit Hook Update Site
+      </description>
+   </category-def>
+</site>

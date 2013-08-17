@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PreCommitExtension
+Bundle-SymbolicName: SubversiveExtension;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.team.svn.core,
+ org.eclipse.team.svn.ui,
+ org.eclipse.core.filesystem;bundle-version="1.3.100",
+ org.eclipse.ant.core;bundle-version="3.2.300",
+ org.eclipse.ui.console;bundle-version="3.5.100",
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources;bundle-version="3.7.100"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Activator: org.codegating.subversive.extension.SampleHandler

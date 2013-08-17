@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project basedir="." default="run" name="pmd-checker">
+
+	<property name="ruleset.file" value="${ruleset.path}/pmdruleset.xml"/>
+	 <tstamp>
+        <format property="time.stamp" pattern="yyyy-mm-dd_hh_mm_ss"/>
+    </tstamp>
+
+	<target name="pmd">
+		
+		<taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask"/>
+		<pmd shortFilenames="true" failonerror="true" maxRuleViolations="${maxviolation}" minimumPriority="4">
+			<ruleset>${ruleset.path}</ruleset>
+			<formatter type="html" toFile="${pmdreports.dir}\PMD_${file.name}_${time.stamp}.html" /> 
+			
+			<fileset dir="${source.dir}">
+				<include name="**/*${file.name}"/>
+			</fileset>
+		</pmd>
+	</target>
+	<!--Checkstyle coding starts-->
+	<target name="checkstyle">
+		<taskdef resource="checkstyletask.properties" />
+		<checkstyle config="${csruleset.path}" failOnViolation="true">
+        	<formatter type="plain" tofile="${csreports.dir}/Checkstyle_${file.name}_${time.stamp}.txt" />
+        	<fileset dir="${source.dir}" includes="**/*${file.name}" />
+        </checkstyle>
+	</target>
+	
+    <target name="run"
+            description="Run the build"
+            depends="pmd, 
+    			checkstyle">
+    </target>
+	<!--Checkstyle coding ends-->
+</project>

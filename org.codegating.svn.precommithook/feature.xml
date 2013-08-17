@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.codegating.svn.precommithook"
+      label="Precommithook"
+      version="1.0.0.qualifier"
+      provider-name="Ganesh Kondal"
+      plugin="SubversiveExtension">
+
+   <description url="ganeshkondal@gmail.com">
+      An extension to Eclipse Subversive client. On every commit, the extension uses ANT PMD task to validate the source code against a ruleset for violations. If violations are present, then the commit will be disallowed. The min number of violations, with which the SVN commit should be allowed is configurable in the ANT build xml.
+   </description>
+
+   <copyright url="ganeshkondal@gmail.com">
+      Developed by Ganesh Kondal. Govered by the GPL License.
+   </copyright>
+
+   <license url="http://www.gnu.org/licenses/gpl.html">
+      Distributed under GPL license.
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.team.svn.core" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.team.svn.ui" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="SubversiveExtension"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+</feature>
